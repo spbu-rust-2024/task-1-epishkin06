@@ -38,15 +38,16 @@ fn main() {
             println!("Error: {}", e);
         }
     }
+
     let mut array_to_sort: Vec<i32> = string_to_array(input_string);
     insertion_sort(&mut array_to_sort);
 
-    let mut final_result: String = String::new();
+    let mut final_result: Vec<String> = vec![];
     for i in 0..array_to_sort.len(){
         let c = array_to_sort[i].to_string();
-        final_result += &c;
-        final_result.push(' ');
+        
+        final_result.push(c);
     }
-    final_result.pop();
-    println!("{}", final_result);
+    
+    println!("{}", final_result.join(" "));
     }
